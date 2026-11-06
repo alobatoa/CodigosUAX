@@ -40,10 +40,12 @@ android {
 }
 
 dependencies {
+    implementation("com.github.bumptech.glide:glide:5.0.9")
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.recyclerview)
     implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.espresso.core)

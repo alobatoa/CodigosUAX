@@ -3,12 +3,13 @@ package com.example.login
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.login.activity.HomeActivity
+import com.example.login.activity.RegisterActivity
 import com.example.login.databinding.ActivityMainBinding
+import com.example.login.model.User
 import com.google.android.material.snackbar.Snackbar
+import java.io.Serializable
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,8 +34,12 @@ class MainActivity : AppCompatActivity() {
                 && binding.editPass.text.toString()
                     .equals("1234", true)
             ) {
+                val mail = binding.editMail.text.toString()
+                val profile = binding.spinnerProfile.selectedItem.toString()
+                val user = User(mail, profile)
                 val intent: Intent = Intent(applicationContext, HomeActivity::class.java)
-                intent.putExtra("user_name", binding.editMail.text.toString())
+                // intent.putExtra("user_name", binding.editMail.text.toString())
+                intent.putExtra("user",user)
                 startActivity(intent)
             } else {
                 Snackbar.make(binding.root, "Usuario invalido", Snackbar.LENGTH_SHORT).show()
@@ -72,6 +77,8 @@ class MainActivity : AppCompatActivity() {
     override fun onRestart() {
         super.onRestart()
         Log.v("ciclo_vida", "Ejecutado onRestart")
+        binding.editPass.text.clear()
+        binding.editMail.text.clear()
     }
 
     override fun onDestroy() {

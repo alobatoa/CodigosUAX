@@ -1,4 +1,4 @@
-package com.example.login
+package com.example.login.activity
 
 import android.os.Bundle
 import android.util.Log
@@ -6,6 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.login.R
 import com.example.login.databinding.ActivityRegisterBinding
 
 class RegisterActivity : AppCompatActivity() {

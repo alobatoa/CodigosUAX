@@ -1,0 +1,18 @@
+activity1 -> onpause	onstop onRestart on Start onResume
+activity2 -> onCreate onStart onResume onPause pnStop onDestroy
+
+Recycler -> UI (XML) + Adaptador (ViewHolder) + DATA (Lista de productos)
+
+1 -> Crea en el xml activity un recycler
+2 -> Crea el xml del aspecto general de cada fila
+3 -> Crea un modelo con el objeto que se renderizara en la lista
+4 -> Crea una clase que sea el Adapter
+	4.1 -> extiendo de RecyclerView.Adapter
+	4.2 -> crea una clase anidada : ViewHolder -> patron de carga de cada una de las filas (ojo esto vale para que solo se haga 1 vez)
+	4.3 -> implementa todos los metodos
+	4.4 -> trae por constructor o como tu veas los datos necesarios (list, context)
+	4.5 -> rellena los metodos
+5 -> Al kt donde esta el reycler
+	5.1 -> crea el adapter (con la lista, mira desde donde viene la lista)
+	5.2 -> asocia el adapter con el recycler
+	5.3 -> indica la disposicion interna de la lista
